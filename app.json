@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/index",
+    "pages/result/index",
+    "pages/report/index",
+    "pages/history/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "心理健康测评",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "question-card": "/components/question-card/index",
+    "result-card": "/components/result-card/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

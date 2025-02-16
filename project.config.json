@@ -1,0 +1,37 @@
+{
+  "description": "心理健康测评小程序",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "miniprogramRoot": "",
+  "compileType": "miniprogram",
+  "projectname": "psychological-test",
+  "setting": {
+    "useCompilerPlugins": [
+      "sass"
+    ],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "coverView": true,
+    "postcss": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmRelationList": [],
+    "es6": true,
+    "enhance": true,
+    "minified": true
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {},
+  "srcMiniprogramRoot": "",
+  "appid": "wx40db29e830294806",
+  "libVersion": "trial",
+  "editorSetting": {
+    "tabIndent": "auto",
+    "tabSize": 2
+  }
+}
