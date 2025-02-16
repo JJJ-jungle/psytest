@@ -1,0 +1,265 @@
+page {
+  /* 颜色变量 */
+  --color-primary: #3498db;
+  --color-primary-light: rgba(52, 152, 219, 0.3);
+  --color-danger: #e74c3c;
+  --color-text-primary: #2c3e50;
+  --color-text-secondary: #7f8c8d;
+  --color-text-light: #95a5a6;
+  --color-background: #f5f6fa;
+  --color-card: white;
+  --color-border: #ecf0f1;
+  --color-shadow: rgba(0, 0, 0, 0.05);
+
+  /* 尺寸变量 */
+  --font-size-small: 24rpx;
+  --font-size-base: 28rpx;
+  --font-size-large: 32rpx;
+  --font-size-xlarge: 40rpx;
+  --font-size-score: 60rpx;
+  
+  /* 间距变量 */
+  --spacing-mini: 8rpx;
+  --spacing-small: 10rpx;
+  --spacing-base: 20rpx;
+  --spacing-large: 30rpx;
+  --spacing-xlarge: 40rpx;
+
+  /* 圆角变量 */
+  --radius-base: 10rpx;
+  --radius-large: 20rpx;
+  --radius-circle: 44rpx;
+}
+
+/* 基础布局 */
+.container {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  padding: var(--spacing-large);
+}
+
+/* 卡片基础样式 */
+.card-base {
+  background: var(--color-card);
+  border-radius: var(--radius-large);
+  padding: var(--spacing-large);
+  margin-bottom: var(--spacing-large);
+  box-shadow: 0 2rpx 10rpx var(--color-shadow);
+}
+
+/* 文本样式 */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+/* 分数显示组件 */
+.score-display {
+  text-align: center;
+  margin-bottom: var(--spacing-large);
+}
+
+.score-display .label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-small);
+  display: block;
+}
+
+.score-display .value {
+  font-size: var(--font-size-score);
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-right: var(--spacing-small);
+}
+
+.score-display .auxiliary {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+}
+
+/* 分隔线 */
+.divider {
+  height: 2rpx;
+  background-color: var(--color-border);
+  margin: var(--spacing-large) 0;
+}
+
+/* 详情项组件 */
+.detail-grid {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: var(--spacing-large);
+}
+
+.detail-item {
+  text-align: center;
+}
+
+.detail-item .label {
+  font-size: var(--font-size-small);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-mini);
+  display: block;
+}
+
+.detail-item .value {
+  font-size: var(--font-size-large);
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* 维度得分网格 */
+.dimension-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-base);
+  padding-top: var(--spacing-base);
+  border-top: 2rpx solid var(--color-border);
+}
+
+.dimension-grid-item {
+  flex: 1;
+  min-width: 150rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-base);
+  background: var(--color-background);
+  border-radius: var(--radius-base);
+}
+
+/* 按钮组件 */
+.btn-base {
+  width: 100%;
+  height: 88rpx;
+  border-radius: var(--radius-circle);
+  font-size: var(--font-size-large);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-card);
+}
+
+.btn-outline {
+  background: var(--color-card);
+  border: 2rpx solid currentColor;
+}
+
+.btn-outline.primary {
+  color: var(--color-primary);
+}
+
+.btn-outline.danger {
+  color: var(--color-danger);
+}
+
+/* 图表容器 */
+.chart-container {
+  width: 100%;
+  height: 600rpx;
+  margin-bottom: var(--spacing-large);
+}
+
+.chart-container ec-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 页眉组件 */
+.header {
+  margin-bottom: var(--spacing-large);
+}
+
+.header .title {
+  font-size: var(--font-size-xlarge);
+  font-weight: bold;
+  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: var(--spacing-small);
+}
+
+.header .subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+}
+
+/* 按钮组 */
+.button-group {
+  padding: var(--spacing-xlarge) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
+.section-title {
+  font-size: var(--font-size-large);
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-base);
+  display: block;
+}
+
+/* 解释列表 */
+.interpretation-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
+.interpretation-item {
+  padding: var(--spacing-base);
+  background-color: var(--color-background);
+  border-radius: var(--radius-base);
+}
+
+.interpretation-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* 建议列表 */
+.suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-base);
+}
+
+.suggestion-item {
+  display: flex;
+  padding: var(--spacing-base);
+  background-color: var(--color-background);
+  border-radius: var(--radius-base);
+}
+
+.suggestion-number {
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-right: var(--spacing-base);
+  min-width: 30rpx;
+}
+
+.suggestion-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  flex: 1;
+}

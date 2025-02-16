@@ -1,0 +1,41 @@
+<!--pages/test/index.wxml-->
+<view class="container">
+  <view class="question-card">
+    <view class="question-content">
+      <text>{{currentQuestion.question}}</text>
+    </view>
+    
+    <view class="options-container">
+      <block wx:for="{{currentQuestion.options}}" wx:key="index">
+        <view 
+          class="option {{selectedOption === index ? 'selected' : ''}}"
+          bindtap="handleOptionSelect"
+          data-index="{{index}}"
+        >
+          <text class="option-text">{{item}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="action-container">
+    <view class="buttons">
+      <button 
+        class="btn-prev" 
+        bindtap="handlePrevQuestion"
+        disabled="{{previousAnswers.length === 0}}"
+      >上一题</button>
+
+      <button 
+        class="btn-confirm {{selectedOption === -1 ? 'disabled' : ''}}" 
+        bindtap="handleConfirmAnswer"
+        disabled="{{selectedOption === -1}}"
+      >确认</button>
+    </view>
+
+    <button 
+      class="btn-quit" 
+      bindtap="handleQuitTest"
+    >退出测试</button>
+  </view>
+</view>

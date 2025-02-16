@@ -1,0 +1,103 @@
+<view class="container">
+  <!-- 简略报告 -->
+  <block wx:if="{{!showDetailReport}}">
+    <view class="card-base">
+      <view class="score-display">
+        <text class="label">能力值θ</text>
+        <text class="value">{{report.thetaDisplay}}</text>
+        <text class="auxiliary">±{{report.semDisplay}}</text>
+      </view>
+
+      <view class="divider"></view>
+
+      <view class="detail-grid">
+        <view class="detail-item">
+          <text class="label">答题数量</text>
+          <text class="value">{{report.totalQuestions}}</text>
+        </view>
+        <view class="detail-item">
+          <text class="label">测评时间</text>
+          <text class="value">{{report.duration}}分钟</text>
+        </view>
+      </view>
+
+      <button class="btn-base btn-primary" bindtap="toggleReportView">
+        查看详细报告
+      </button>
+    </view>
+  </block>
+
+  <!-- 详细报告 -->
+  <block wx:else>
+    <view class="header">
+      <text class="title">测评报告</text>
+      <text class="subtitle">{{report.timestamp}}</text>
+    </view>
+
+    <view class="card-base">
+      <view class="score-display">
+        <text class="label">能力值θ</text>
+        <text class="value">{{report.thetaDisplay}}</text>
+        <text class="auxiliary">±{{report.semDisplay}}</text>
+      </view>
+
+      <view class="detail-grid">
+        <view class="detail-item">
+          <text class="label">测评时长</text>
+          <text class="value">{{report.duration}}分钟</text>
+        </view>
+        <view class="detail-item">
+          <text class="label">答题数量</text>
+          <text class="value">{{report.totalQuestions}}题</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="card-base">
+      <text class="text-bold text-primary">维度分析</text>
+      <view class="chart-container">
+        <ec-canvas id="mychart" canvas-id="mychart" ec="{{ ec }}"></ec-canvas>
+      </view>
+      
+      <view class="dimension-grid">
+        <view class="dimension-grid-item" wx:for="{{dimensionScores}}" wx:key="name">
+          <text class="text-secondary">{{item.name}}</text>
+          <text class="text-primary text-bold">{{item.score}}%</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 解释部分 -->
+    <view class="card-base">
+      <text class="section-title">详细解释</text>
+      <view class="interpretation-list">
+        <view class="interpretation-item" wx:for="{{report.interpretations}}" wx:key="index">
+          <text class="interpretation-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 建议部分 -->
+    <view class="card-base">
+      <text class="section-title">建议</text>
+      <view class="suggestion-list">
+        <view class="suggestion-item" wx:for="{{report.suggestions}}" wx:key="index">
+          <text class="suggestion-number">{{index + 1}}.</text>
+          <text class="suggestion-text">{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="button-group">
+      <button class="btn-base btn-outline primary" bindtap="toggleReportView">
+        返回简略报告
+      </button>
+      <button class="btn-base btn-primary" bindtap="handleExportReport">
+        导出报告
+      </button>
+      <button class="btn-base btn-outline danger" bindtap="handleBackHome">
+        返回首页
+      </button>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="header">
+    <text class="title">测评历史</text>
+    <text class="subtitle">{{history.length}}次测评记录</text>
+  </view>
+
+  <view class="history-list">
+    <block wx:if="{{history.length > 0}}">
+      <view 
+        class="history-item" 
+        wx:for="{{history}}" 
+        wx:key="date"
+        bindtap="viewDetail"
+        data-index="{{index}}"
+      >
+        <view class="item-header">
+          <text class="date">{{item.dateDisplay}}</text>
+          <text class="time">{{item.timeDisplay}}</text>
+        </view>
+        
+        <view class="item-content">
+          <view class="score-info">
+            <text class="score-label">能力值θ</text>
+            <text class="score-value">{{item.thetaDisplay}}</text>
+          </view>
+          <view class="detail-info">
+            <text class="questions-count">答题数：{{item.totalQuestions}}</text>
+            <text class="accuracy">标准误：{{item.semDisplay}}</text>
+          </view>
+        </view>
+        
+        <view class="item-footer">
+          <text class="status {{item.theta < -1 ? 'warning' : 'normal'}}">
+            {{item.theta < -1 ? '需要关注' : '状态正常'}}
+          </text>
+          <view class="arrow">></view>
+        </view>
+      </view>
+    </block>
+    
+    <view wx:else class="empty-state">
+      <image class="empty-icon" src="/images/empty.png" mode="aspectFit"></image>
+      <text class="empty-text">暂无测评记录</text>
+    </view>
+  </view>
+</view>

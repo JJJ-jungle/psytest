@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="header">
+    <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+    <text class="title">心理健康测评</text>
+    <text class="subtitle">科学评估，关爱心理健康</text>
+  </view>
+  
+  <view class="content">
+    <block wx:if="{{!hasUserInfo}}">
+      <button class="btn-start" bindtap="getUserProfile">
+        <text class="btn-text">开始测评</text>
+      </button>
+      <text class="tips">授权后即可开始测评</text>
+    </block>
+    <block wx:else>
+      <view class="user-info">
+        <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+        <text class="nickname">{{userInfo.nickName}}</text>
+      </view>
+      <button class="btn-start" bindtap="startTest">开始新测评</button>
+      <button class="btn-history" bindtap="viewHistory">查看历史记录</button>
+    </block>
+  </view>
+
+  <view class="footer">
+    <text class="copyright">Copyright © 2025 心理健康测评</text>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+<!--pages/result/index.wxml-->
+<view class="container">
+  <view class="result-card">
+    <view class="score-section">
+      <view class="score-value">
+        <text class="score">{{thetaDisplay}}</text>
+        <text class="label">能力值θ</text>
+      </view>
+      <view class="accuracy">
+        <text>测量标准误: {{semDisplay}}</text>
+      </view>
+    </view>
+
+    <view class="divider"></view>
+
+    <view class="analysis-section">
+      <view class="section-title">评估结果</view>
+      <view class="analysis-content">
+        <text>{{analysisText}}</text>
+      </view>
+    </view>
+
+    <view class="suggestion-section">
+      <view class="section-title">建议</view>
+      <view class="suggestions">
+        <block wx:for="{{suggestions}}" wx:key="index">
+          <view class="suggestion-item">
+            <text class="suggestion-text">{{item}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-buttons">
+    <button class="btn-primary" bindtap="viewDetail">查看详细报告</button>
+    <button class="btn-secondary" bindtap="backToHome">返回首页</button>
+  </view>
+</view>

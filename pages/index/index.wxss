@@ -1,0 +1,102 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background-color: #f5f6fa;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+
+.logo {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #7f8c8d;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.nickname {
+  font-size: 32rpx;
+  color: #2c3e50;
+}
+
+.btn-start, .btn-history {
+  width: 80%;
+  height: 88rpx;
+  border-radius: 44rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-start {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  box-shadow: 0 4rpx 10rpx rgba(52, 152, 219, 0.3);
+}
+
+.btn-history {
+  background: white;
+  color: #3498db;
+  border: 2rpx solid #3498db;
+}
+
+.btn-text {
+  font-size: 32rpx;
+}
+
+.tips {
+  font-size: 24rpx;
+  color: #95a5a6;
+  margin-top: 20rpx;
+}
+
+.footer {
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 24rpx;
+  color: #95a5a6;
+}
