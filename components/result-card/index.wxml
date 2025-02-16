@@ -1,0 +1,30 @@
+<view class="result-card">
+  <view class="card-header">
+    <view class="score-section">
+      <text class="score-label">能力值θ</text>
+      <text class="score-value">{{result.theta.toFixed(2)}}</text>
+      <text class="score-sem">±{{result.sem.toFixed(2)}}</text>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <view class="detail-section">
+    <view class="detail-item">
+      <text class="detail-label">答题数量</text>
+      <text class="detail-value">{{result.answers.length}}</text>
+    </view>
+    <view class="detail-item">
+      <text class="detail-label">测评时间</text>
+      <text class="detail-value">{{result.duration}}分钟</text>
+    </view>
+    <view class="detail-item">
+      <text class="detail-label">完成日期</text>
+      <text class="detail-value">{{result.dateStr}}</text>
+    </view>
+  </view>
+
+  <view class="action-section">
+    <button class="btn-detail" bindtap="handleViewDetail">查看详细报告</button>
+  </view>
+</view>

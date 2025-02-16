@@ -1,0 +1,18 @@
+<view class="question-card" animation="{{animationData}}">
+  <view class="question-content">
+    <text>{{question.question}}</text>
+  </view>
+  
+  <view class="options-container">
+    <block wx:for="{{question.options}}" wx:key="index">
+      <view 
+        class="option {{selectedOption === index ? 'selected' : ''}}"
+        bindtap="handleOptionSelect"
+        data-index="{{index}}"
+      >
+        <view class="option-index">{{index + 1}}</view>
+        <text class="option-text">{{item}}</text>
+      </view>
+    </block>
+  </view>
+</view>
